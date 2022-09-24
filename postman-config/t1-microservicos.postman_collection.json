@@ -1,0 +1,527 @@
+{
+	"info": {
+		"_postman_id": "3d614ed8-7ee9-478d-b15d-58b621225108",
+		"name": "t1-microservicos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15307382"
+	},
+	"item": [
+		{
+			"name": "estudante",
+			"item": [
+				{
+					"name": "test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"teste\",\r\n    \"numero_documento\":\"123123\",\r\n    \"endereco\":\"testeende\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/estudante/test?nome=\"asdasd\"&numero_deocumento=\"asdadas\"&endereco=\"asdsaddsa\"",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante",
+								"test"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "\"asdasd\""
+								},
+								{
+									"key": "numero_deocumento",
+									"value": "\"asdadas\""
+								},
+								{
+									"key": "endereco",
+									"value": "\"asdsaddsa\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "matricula",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "matricula",
+								"value": "78931890343253874",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"matricula\":78931890343253874\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/estudante/matricula/1891696207906156000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante",
+								"matricula",
+								"1891696207906156000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "nome",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "matricula",
+								"value": "78931890343253874",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"matricula\":78931890343253874\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/estudante/matricula/1891696207906156000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante",
+								"matricula",
+								"1891696207906156000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    nome:\"teste\",\r\n    numero_documento:\"variosnumero\"\r\n    endereco:\"rua teste\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/estudante/create?nome=\"teste\"&numero_documento=\"teste\"&endereco=\"teste\"",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estudante",
+								"create"
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": "\"teste\""
+								},
+								{
+									"key": "numero_documento",
+									"value": "\"teste\""
+								},
+								{
+									"key": "endereco",
+									"value": "\"teste\""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "turma",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/turma/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turma",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "disciplina",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/turma/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turma",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "matricula",
+			"item": [
+				{
+					"name": "cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "numero_matricula",
+								"value": "-1579697700346350396",
+								"type": "text"
+							},
+							{
+								"key": "id_disciplina",
+								"value": "38",
+								"type": "text"
+							},
+							{
+								"key": "id_turma",
+								"value": "11",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero_matricula\":\"-1579697700346350396\",\r\n    \"id_disciplina\":38,\r\n    \"id_turma\":11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/matricula/cadastrar?numero_matricula=2055016737992270915&id_disciplina=38&id_turma=11",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"matricula",
+								"cadastrar"
+							],
+							"query": [
+								{
+									"key": "numero_matricula",
+									"value": "2055016737992270915"
+								},
+								{
+									"key": "id_disciplina",
+									"value": "38"
+								},
+								{
+									"key": "id_turma",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "consulta",
+			"item": [
+				{
+					"name": "get turmas disciplinas by student id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "numero_matricula",
+								"value": "-1579697700346350396",
+								"type": "text"
+							},
+							{
+								"key": "id_disciplina",
+								"value": "38",
+								"type": "text"
+							},
+							{
+								"key": "id_turma",
+								"value": "11",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero_matricula\":\"-1579697700346350396\",\r\n    \"id_disciplina\":38,\r\n    \"id_turma\":11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/matricula/cadastrar?numero_matricula=2055016737992270915&id_disciplina=38&id_turma=11",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"matricula",
+								"cadastrar"
+							],
+							"query": [
+								{
+									"key": "numero_matricula",
+									"value": "2055016737992270915"
+								},
+								{
+									"key": "id_disciplina",
+									"value": "38"
+								},
+								{
+									"key": "id_turma",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get stundet by dsiciplina",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "numero_matricula",
+								"value": "-1579697700346350396",
+								"type": "text"
+							},
+							{
+								"key": "id_disciplina",
+								"value": "38",
+								"type": "text"
+							},
+							{
+								"key": "id_turma",
+								"value": "11",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero_matricula\":\"-1579697700346350396\",\r\n    \"id_disciplina\":38,\r\n    \"id_turma\":11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/consulta/estudante_disciplinas",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consulta",
+								"estudante_disciplinas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get stundet by turma",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "numero_matricula",
+								"value": "-1579697700346350396",
+								"type": "text"
+							},
+							{
+								"key": "id_disciplina",
+								"value": "38",
+								"type": "text"
+							},
+							{
+								"key": "id_turma",
+								"value": "11",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numero_matricula\":\"-1579697700346350396\",\r\n    \"id_disciplina\":38,\r\n    \"id_turma\":11\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/consulta/estudante_turma",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consulta",
+								"estudante_turma"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"email@teste.com\",\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
