@@ -24,8 +24,6 @@ public class ConsultaService {
     public Map<String,List<String>> find_turmas_disciplinas(Long id){
         HashMap<String,List<String>> response = new HashMap();
 
-        System.out.println("service"+id);
-
         List<DisciplinaModel> disciplinaModel = disciplinaRepository.find_by_student(id);
 
         if(disciplinaModel == null || disciplinaModel.isEmpty())

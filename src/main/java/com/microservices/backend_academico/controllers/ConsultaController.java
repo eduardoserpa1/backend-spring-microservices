@@ -52,8 +52,4 @@ public class ConsultaController {
             return new ResponseEntity<>(null, HttpStatus.LOCKED);
     }
 
-    @GetMapping
-    public String getsession(){
-        return userSession.toString();
-    }
 }

@@ -15,6 +15,8 @@ public interface EstudanteRepository extends JpaRepository<EstudanteModel, Long>
     @Query("SELECT x from EstudanteModel x where x.numero_matricula like ?1")
     EstudanteModel find_by_numero_matricula(String numero_matricula);
 
+    @Query("SELECT x from EstudanteModel x where x.id = ?1")
+    EstudanteModel find_by_id(Long id);
     @Query("select e \n" +
             "from DisciplinaModel d\n" +
             "join TurmaModel t\n" +

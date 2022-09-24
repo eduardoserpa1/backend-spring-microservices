@@ -2,6 +2,7 @@ package com.microservices.backend_academico.controllers;
 
 import com.microservices.backend_academico.dtos.DisciplinaDTO;
 import com.microservices.backend_academico.dtos.TurmaDTO;
+import com.microservices.backend_academico.exceptions.ReferenceDontExistsException;
 import com.microservices.backend_academico.models.DisciplinaModel;
 import com.microservices.backend_academico.models.TurmaModel;
 import com.microservices.backend_academico.services.DisciplinaService;
@@ -28,7 +29,7 @@ public class DisciplinaController {
     UserSession userSession;
 
     @PostMapping("/create")
-    public ResponseEntity<DisciplinaModel> cadastraDisciplina(@RequestBody DisciplinaDTO disciplinaDTO){
+    public ResponseEntity<DisciplinaModel> cadastraDisciplina(@RequestBody DisciplinaDTO disciplinaDTO) throws ReferenceDontExistsException {
         if (userSession.getAuth()){
             DisciplinaModel disciplinaModel = new DisciplinaModel();
             BeanUtils.copyProperties(disciplinaDTO, disciplinaModel);

@@ -13,6 +13,9 @@ public class TurmaDTO {
     @NotBlank
     private Long id;
     @NotBlank
+    private Long id_turma;
+    @NotBlank
     private Long id_estudante;
+
 
 }

@@ -69,9 +69,5 @@ public class EstudanteController {
 
     }
 
-    @PostMapping("/test")
-    public String s(@RequestBody EstudanteDTO estudanteDto){
-        return estudanteDto.getEndereco();
-    }
 
 }

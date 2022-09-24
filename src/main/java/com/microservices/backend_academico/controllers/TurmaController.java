@@ -1,6 +1,7 @@
 package com.microservices.backend_academico.controllers;
 
 import com.microservices.backend_academico.dtos.TurmaDTO;
+import com.microservices.backend_academico.exceptions.ReferenceDontExistsException;
 import com.microservices.backend_academico.models.EstudanteModel;
 import com.microservices.backend_academico.models.TurmaModel;
 import com.microservices.backend_academico.services.TurmaService;
@@ -25,13 +26,12 @@ public class TurmaController {
     UserSession userSession;
 
     @PostMapping("/create")
-    public ResponseEntity<TurmaModel> cadastraTurma(@RequestBody TurmaDTO turmaDTO){
+    public ResponseEntity<TurmaModel> cadastraTurma(@RequestBody TurmaDTO turmaDTO)  throws ReferenceDontExistsException {
         if (userSession.getAuth()){
             TurmaModel turmaModel = new TurmaModel();
             BeanUtils.copyProperties(turmaDTO, turmaModel);
             turmaModel.setId_estudante(turmaDTO.getId_estudante());
-            turma_service.create(turmaModel);
-            return new ResponseEntity<>(turmaModel, HttpStatus.CREATED);
+            return new ResponseEntity<>(turma_service.create(turmaModel), HttpStatus.CREATED);
         }else{
             return new ResponseEntity<>(null, HttpStatus.LOCKED);
         }

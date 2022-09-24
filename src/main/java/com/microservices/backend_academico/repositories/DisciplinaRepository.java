@@ -16,4 +16,7 @@ public interface DisciplinaRepository extends JpaRepository<DisciplinaModel, Lon
 
     @Query("select d from DisciplinaModel d where d.id_turma in (select t.id_turma from TurmaModel t join EstudanteModel e on t.id_estudante = ?1 group by t.id_turma)")
     List<DisciplinaModel> find_by_student(Long id);
+
+
+
 }
