@@ -6,6 +6,7 @@ import com.microservices.backend_academico.models.DisciplinaModel;
 import com.microservices.backend_academico.models.TurmaModel;
 import com.microservices.backend_academico.services.DisciplinaService;
 
+import com.microservices.backend_academico.session.UserSession;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,12 +24,19 @@ public class DisciplinaController {
     @Autowired
     DisciplinaService disciplina_service;
 
+    @Autowired
+    UserSession userSession;
+
     @PostMapping("/create")
-    public ResponseEntity<DisciplinaModel> cadastraTurma(@RequestBody DisciplinaDTO disciplinaDTO){
-        DisciplinaModel disciplinaModel = new DisciplinaModel();
-        BeanUtils.copyProperties(disciplinaDTO, disciplinaModel);
-        disciplina_service.create(disciplinaModel);
-        return new ResponseEntity<>(disciplinaModel, HttpStatus.CREATED);
+    public ResponseEntity<DisciplinaModel> cadastraDisciplina(@RequestBody DisciplinaDTO disciplinaDTO){
+        if (userSession.getAuth()){
+            DisciplinaModel disciplinaModel = new DisciplinaModel();
+            BeanUtils.copyProperties(disciplinaDTO, disciplinaModel);
+            disciplina_service.create(disciplinaModel);
+            return new ResponseEntity<>(disciplinaModel, HttpStatus.CREATED);
+        }else{
+            return new ResponseEntity<>(null, HttpStatus.LOCKED);
+        }
     }
 
 }

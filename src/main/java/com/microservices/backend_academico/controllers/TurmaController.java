@@ -4,6 +4,7 @@ import com.microservices.backend_academico.dtos.TurmaDTO;
 import com.microservices.backend_academico.models.EstudanteModel;
 import com.microservices.backend_academico.models.TurmaModel;
 import com.microservices.backend_academico.services.TurmaService;
+import com.microservices.backend_academico.session.UserSession;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,12 +21,19 @@ public class TurmaController {
     @Autowired
     TurmaService turma_service;
 
+    @Autowired
+    UserSession userSession;
+
     @PostMapping("/create")
     public ResponseEntity<TurmaModel> cadastraTurma(@RequestBody TurmaDTO turmaDTO){
-        TurmaModel turmaModel = new TurmaModel();
-        BeanUtils.copyProperties(turmaDTO, turmaModel);
-        turmaModel.setId_estudante(turmaDTO.getId_estudante());
-        turma_service.create(turmaModel);
-        return new ResponseEntity<>(turmaModel, HttpStatus.CREATED);
+        if (userSession.getAuth()){
+            TurmaModel turmaModel = new TurmaModel();
+            BeanUtils.copyProperties(turmaDTO, turmaModel);
+            turmaModel.setId_estudante(turmaDTO.getId_estudante());
+            turma_service.create(turmaModel);
+            return new ResponseEntity<>(turmaModel, HttpStatus.CREATED);
+        }else{
+            return new ResponseEntity<>(null, HttpStatus.LOCKED);
+        }
     }
 }
